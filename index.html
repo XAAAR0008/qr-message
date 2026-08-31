@@ -1,43 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>رسالة خاصة ❤️</title>
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  font-family:Arial,Tahoma,sans-serif;
-  background:linear-gradient(135deg,#111827,#312e81,#7c3aed);
-  overflow:hidden; color:white;
-}
-.card{
-  width:min(90%,420px); padding:42px 25px; text-align:center;
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22);
-  border-radius:28px; backdrop-filter:blur(14px);
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
-}
-.heart{font-size:55px; animation:pulse 1.5s infinite}
-h1{font-size:32px;margin:12px 0}
-p{font-size:21px;line-height:1.8;margin:12px 0 25px}
-button{
-  border:0;border-radius:999px;padding:13px 28px;font-size:18px;
-  background:white;color:#4c1d95;font-weight:bold;cursor:pointer;
-}
-#reply{display:none;margin-top:20px;font-size:18px}
-@keyframes pulse{50%{transform:scale(1.12)}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#21110f">
+  <meta name="description" content="هدية صغيرة من القلب إلى أمي ❤️">
+  <title>كل سنة وانتي طيبة يا أمي ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+    :root{
+      --bg:#160b0a; --bg2:#24110f; --card:rgba(54,26,23,.78);
+      --rose:#c97979; --rose2:#e6a09a; --gold:#d6a47c; --cream:#fff0df;
+      --muted:#d9bfb2; --line:rgba(230,160,154,.25); --shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 50% 0,#4a211c 0,#21100e 34%,#120807 100%);color:var(--cream);font-family:Cairo,system-ui,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(circle at 20% 20%,#fff 0 1px,transparent 2px),radial-gradient(circle at 80% 40%,#fff 0 1px,transparent 2px),radial-gradient(circle at 45% 75%,#fff 0 1px,transparent 2px);background-size:150px 180px,210px 240px,190px 210px}
+    .wrap{width:min(760px,100%);margin:auto;padding:18px 14px 48px}
+    .topbar{display:flex;justify-content:flex-start;align-items:center;position:sticky;top:0;z-index:30;padding:8px 0;background:linear-gradient(#160b0a 70%,transparent);}
+    .music{border:1px solid var(--line);background:rgba(20,8,7,.78);color:var(--cream);border-radius:999px;padding:9px 14px;font:600 13px Cairo;cursor:pointer}
+    .hero{text-align:center;padding:38px 8px 24px;min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .eyebrow{color:var(--gold);font-size:14px;letter-spacing:.5px;margin-bottom:8px}
+    h1{font-size:clamp(38px,11vw,70px);line-height:1.15;margin:0;max-width:680px;text-shadow:0 0 30px rgba(230,160,154,.18)}
+    h1 span{color:var(--rose2)}
+    .hero-sub{color:var(--muted);font-size:15px;line-height:2;margin:18px auto 24px;max-width:560px}
+    .heart-photo{width:min(92vw,540px);aspect-ratio:1/1;object-fit:cover;border-radius:48% 48% 45% 45%;border:2px solid rgba(230,160,154,.55);box-shadow:0 0 0 7px rgba(214,164,124,.08),0 30px 90px rgba(0,0,0,.5);object-position:center}
+    .btn{border:0;border-radius:999px;padding:13px 23px;background:linear-gradient(135deg,#d77f7b,#ad4e59);color:white;font:700 15px Cairo;box-shadow:0 10px 28px rgba(173,78,89,.28);cursor:pointer;transition:.2s transform,.2s filter}
+    .btn:active{transform:scale(.97)} .btn.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);box-shadow:none}
+    .section{display:none;opacity:0;transform:translateY(18px);transition:.5s ease;margin:18px 0}
+    .section.show{display:block;animation:rise .65s ease forwards}@keyframes rise{to{opacity:1;transform:none}}
+    .card{background:linear-gradient(145deg,rgba(62,30,27,.84),rgba(31,15,14,.9));border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card:after{content:"♥";position:absolute;left:-10px;bottom:-28px;font-size:100px;color:rgba(230,160,154,.035);transform:rotate(-15deg)}
+    .num{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--gold);font-weight:700;font-size:13px;margin-bottom:10px}
+    h2{margin:0 0 8px;font-size:25px} h3{margin:0 0 8px;font-size:17px;color:var(--rose2)}
+    p{color:var(--muted);line-height:2;font-size:15px;margin:8px 0}
+    .letter{background:linear-gradient(#f7dfc5,#ead0b0);color:#4b2c24;border-radius:16px;padding:24px 20px;line-height:2.25;box-shadow:inset 0 0 0 1px rgba(96,55,42,.12);position:relative}
+    .letter:before{content:"";position:absolute;inset:9px;border:1px dashed rgba(96,55,42,.25);border-radius:10px;pointer-events:none}
+    .memory{width:100%;border-radius:18px;display:block;border:1px solid rgba(230,160,154,.35);box-shadow:0 15px 40px rgba(0,0,0,.35)}
+    .caption{text-align:center;color:var(--muted);font-size:13px;margin-top:9px}
+    .video-wrap{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:0 15px 40px rgba(0,0,0,.35)}
+    video{width:100%;display:block;max-height:72vh;background:#000}
+    .continue{text-align:center;margin-top:17px}
+    .gift-area{text-align:center;padding:16px 4px}.gift{font-size:92px;filter:drop-shadow(0 12px 20px rgba(0,0,0,.35));animation:float 2.4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-9px)}}
+    .reveal{display:none;text-align:center;padding:25px 12px}.reveal.show{display:block;animation:pop .7s ease}@keyframes pop{0%{opacity:0;transform:scale(.86)}100%{opacity:1;transform:scale(1)}}
+    .big-heart{font-size:80px;line-height:1;display:inline-block;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.12)}}
+    .final{text-align:center;padding:34px 12px 8px}.final h2{font-size:31px}.signature{color:var(--gold);margin-top:14px}
+    .qr-box{margin-top:24px;padding:18px;border:1px dashed var(--line);border-radius:20px;text-align:center;background:rgba(255,255,255,.025)}
+    .qr-placeholder{width:160px;height:160px;margin:12px auto;border-radius:12px;background:repeating-linear-gradient(45deg,#f8eadb 0 6px,#21100e 6px 12px);display:flex;align-items:center;justify-content:center;color:#21100e;font-weight:700;border:8px solid #f8eadb}
+    .small{font-size:12px;color:#b99f94}
+    .confetti{position:fixed;inset:0;pointer-events:none;z-index:50}.piece{position:absolute;top:-20px;font-size:20px;animation:fall 2.7s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+    .heart{position:fixed;bottom:-30px;color:#e88f91;pointer-events:none;z-index:5;animation:riseHeart linear forwards;text-shadow:0 0 12px rgba(232,143,145,.5)}@keyframes riseHeart{to{transform:translateY(-110vh) translateX(var(--drift)) rotate(25deg);opacity:0}}
+    @media(min-width:700px){.wrap{padding-left:24px;padding-right:24px}.hero{min-height:720px}.card{padding:30px}}
+  </style>
 </head>
 <body>
-<div class="card">
-  <div class="heart">❤️</div>
-  <h1>البشممرض بيمسي 😂</h1>
-  <p>رسالة خاصة وصلت ليك...<br>خلي يومك حلو بقى 😎</p>
-  <button onclick="document.getElementById('reply').style.display='block'">
-    اضغط هنا 😂
-  </button>
-  <div id="reply">تم استلام البوسة بنجاح 😂❤️</div>
-</div>
+  <div class="wrap">
+    <div class="topbar"><button class="music" id="musicBtn" type="button">♫ الموسيقى اختيارية</button></div>
+
+    <header class="hero">
+      <div class="eyebrow">هدية صغيرة من القلب ❤️</div>
+      <h1>كل سنة <span>وانتي طيبة</span><br>يا أمي</h1>
+      <p class="hero-sub">في حاجة صغيرة عملتها مخصوص عشانك... بس لازم تمشي معايا للآخر عشان تعرفي المفاجأة 🎁</p>
+      <img class="heart-photo" src="assets/mom-memory.jpg" alt="ذكرى جميلة مع أمي" loading="eager">
+      <div style="margin-top:22px"><button class="btn" id="startBtn">ابدئي المفاجأة 🎁</button></div>
+    </header>
+
+    <main id="journey">
+      <section class="section" id="s1"><div class="card"><span class="num">01</span><h2>رسالة حب لأمي ❤️</h2><div class="letter">إلى أعظم أم في الدنيا...<br><br>إنتِ حنان لا ينتهي، ودعاء لا يتوقف، وقلبك هو النور اللي بيهديني كل يوم.<br><br>شكرًا لكل تعب، لكل دعوة، لكل لحظة صعبة عدّت وإنتِ جنبي.<br><br>ربنا يخليكي ليا ويطوّل في عمرك ويخلي أيامك كلها فرحة ❤️</div><div class="continue"><button class="btn next" data-next="s2">كمّلي ❤️</button></div></div></section>
+
+      <section class="section" id="s2"><div class="card"><span class="num">02</span><h2>أجمل الذكريات 📸</h2><p>الصورة دي من الذكريات اللي هتفضل غالية على قلبي.</p><img class="memory" src="assets/mom-memory.jpg" alt="أنا وأمي" loading="lazy"><div class="caption">أنا وأمي ❤️</div><div class="continue"><button class="btn next" data-next="s3">نروح للفيديو؟ 🎬</button></div></div></section>
+
+      <section class="section" id="s3"><div class="card"><span class="num">03</span><h2>فيديو 1 ❤️</h2><p>أجمل لحظاتنا تستاهل تتشاف أكتر من مرة.</p><div class="video-wrap"><video controls playsinline preload="metadata"><source src="assets/video-1.mp4" type="video/mp4"></video></div><div class="continue"><button class="btn next" data-next="s4">التالي ➜</button></div></div></section>
+
+      <section class="section" id="s4"><div class="card"><span class="num">04</span><h2>فيديو 2 ❤️</h2><p>كلمات بسيطة... بس طالعة من القلب.</p><div class="video-wrap"><video controls playsinline preload="metadata"><source src="assets/video-2.mp4" type="video/mp4"></video></div><div class="continue"><button class="btn next" data-next="s5">لسه في حاجة ❤️</button></div></div></section>
+
+      <section class="section" id="s5"><div class="card"><span class="num">05</span><h2>فيديو 3 ❤️</h2><p>آخر فيديو قبل ما نوصل للحاجة اللي مخبيها عنك.</p><div class="video-wrap"><video controls playsinline preload="metadata"><source src="assets/video-3.mp4" type="video/mp4"></video></div><div class="continue"><button class="btn next" data-next="s6">جاهزة؟ 🎁</button></div></div></section>
+
+      <section class="section" id="s6"><div class="card gift-area"><span class="num">06</span><h2>جاهزة للمفاجأة؟</h2><p>وصلنا للحظة اللي كنت مستنيها... اضغطي على الهدية وافتحيها ❤️</p><div class="gift">🎁</div><button class="btn" id="giftBtn">افتحي هديتك 🎁</button><div class="reveal" id="reveal"><div class="big-heart">❤️</div><h2>أنتِ الدنيا كلها يا أمي</h2><p>مهما كتبت ومهما عملت، عمري ما هقدر أوفيكي حقك. وجودك في حياتي أكبر نعمة.</p><div class="continue"><button class="btn next" data-next="s7">في رسالة أخيرة ❤️</button></div></div></div></section>
+
+      <section class="section" id="s7"><div class="card"><span class="num">07</span><h2>كلمة أخيرة ليكي ❤️</h2><div class="letter"><strong>بحبك يا أمي..</strong><br><br>ربنا يخليكي ليا ويخلي ضحكتك دايمًا في وشك، ويبعد عنك أي تعب أو حزن.<br><br>كل سنة وانتي طيبة، ويا أغلى أم في الدنيا.<br><br>❤️</div><div class="continue"><button class="btn next" data-next="s8">آخر حاجة 🎵</button></div></div></section>
+
+      <section class="section" id="s8"><div class="card"><span class="num">08</span><h2>لحظة هادية لأمي 🌹</h2><p>لو حبيتي، شغّلي أي موسيقى هادية من موبايلك وإنتِ بتكمّلي آخر جزء.</p><div class="final"><div style="font-size:56px">🌹</div><h2>المفاجأة خلصت...<br>لكن الحب عمره ما يخلص ❤️</h2><p>شكرًا إنك دايمًا أجمل جزء في حياتي.</p><div class="signature">صممت بكل حب... عشانك يا أمي ❤️</div></div></div></section>
+
+      <div class="qr-box"><div>🔲 <strong>الـQR النهائي</strong></div><div class="qr-placeholder">QR</div><p class="small">بعد رفع الموقع والتأكد من الرابط، نضع هنا نسخة الـQR النهائية للطباعة على كارت الهدية.</p></div>
+    </main>
+  </div>
+  <div class="confetti" id="confetti"></div>
+
+  <script>
+    const sections=[...document.querySelectorAll('.section')];
+    const start=document.getElementById('startBtn');
+    function show(id){
+      const el=document.getElementById(id); if(!el)return;
+      el.classList.add('show');
+      setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    }
+    start.addEventListener('click',()=>{show('s1'); start.disabled=true; start.textContent='بدأت المفاجأة ❤️'; burst();});
+    document.querySelectorAll('.next').forEach(btn=>btn.addEventListener('click',()=>show(btn.dataset.next)));
+    document.getElementById('giftBtn').addEventListener('click',()=>{
+      document.getElementById('reveal').classList.add('show');
+      document.getElementById('giftBtn').style.display='none';
+      burst();
+    });
+    function burst(){
+      const box=document.getElementById('confetti');
+      for(let i=0;i<26;i++){
+        const p=document.createElement('span'); p.className='piece'; p.textContent=['❤️','💗','✨','🌹','💕'][Math.floor(Math.random()*5)];
+        p.style.left=Math.random()*100+'vw'; p.style.animationDelay=(Math.random()*.5)+'s'; p.style.fontSize=(14+Math.random()*18)+'px'; box.appendChild(p); setTimeout(()=>p.remove(),3400);
+      }
+    }
+    function floatingHeart(){
+      const h=document.createElement('span'); h.className='heart'; h.textContent='♥'; h.style.left=Math.random()*100+'vw'; h.style.fontSize=(12+Math.random()*20)+'px'; h.style.animationDuration=(5+Math.random()*5)+'s'; h.style.setProperty('--drift',(Math.random()*120-60)+'px'); document.body.appendChild(h); setTimeout(()=>h.remove(),11000);
+    }
+    setInterval(floatingHeart,900);
+    document.getElementById('musicBtn').addEventListener('click',()=>alert('الموسيقى اختيارية ❤️\nلما نضيف ملف الموسيقى بتاعك، الزر ده هيشغّله هنا.'));
+  </script>
 </body>
 </html>
